@@ -2,6 +2,8 @@
 
 상상기업 발자취 프로젝트
 
+팀원:
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
