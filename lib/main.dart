@@ -1,6 +1,9 @@
+import 'package:baljachwi_project/screens/catalog_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:baljachwi_project/screens/nonmember_home_screen.dart';
+import 'package:baljachwi_project/screens/catalog_list_screen.dart';
+import 'package:baljachwi_project/screens/nonmember_order_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +15,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: nonmemberHome(),
+      //debugShowCheckedModeBanner: false,
+      home: catalogList(),
     );
   }
 }
