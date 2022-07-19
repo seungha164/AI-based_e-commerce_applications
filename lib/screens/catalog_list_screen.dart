@@ -146,7 +146,7 @@ class _catalogList extends State<catalogList> {
                           height: 130,
                           margin: const EdgeInsets.only(left: 35, right: 35),
                           alignment: Alignment.centerLeft,
-                          child: Image.asset('assets/logo/logo.png',
+                          child: Image.asset('images/chickenBreast.jpg',
                               width: 100, height: 100),
                         ),
                         Column(
@@ -155,7 +155,7 @@ class _catalogList extends State<catalogList> {
                             Container(
                               width: 400,
                               child: Text(
-                                '하림 닭가슴살 1개입',
+                                '하림 IFF 닭가슴살(냉동), 2kg, 1개',
                                 style: TextStyle(
                                     fontSize: 20, fontWeight: FontWeight.bold),
                               ),
@@ -163,7 +163,51 @@ class _catalogList extends State<catalogList> {
                             Container(
                               width: 400,
                               child: Text(
-                                '2,200원',
+                                '16,900원',
+                                style: TextStyle(fontSize: 16, height: 2),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                width: double.infinity,
+                alignment: Alignment.centerLeft,
+                padding: const EdgeInsets.fromLTRB(5, 12, 35, 12),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        Container(
+                          width: 100,
+                          height: 130,
+                          margin: const EdgeInsets.only(left: 35, right: 35),
+                          alignment: Alignment.centerLeft,
+                          child: Image.asset('images/tomato.jpg',
+                              width: 100, height: 100),
+                        ),
+                        Column(
+                          //width: 240,
+                          children: <Widget>[
+                            Container(
+                              width: 400,
+                              child: Text(
+                                '충남세도 GAP 인증 대추방울토마토, 1kg, 1박스',
+                                style: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                            Container(
+                              width: 400,
+                              child: Text(
+                                '11,800원',
                                 style: TextStyle(fontSize: 16, height: 2),
                               ),
                             ),
