@@ -9,6 +9,13 @@ class catalogList extends StatefulWidget {
 }
 
 class _catalogList extends State<catalogList> {
+  final TextEditingController _controller = TextEditingController();
+  void _clearTextField() {
+    // Clear everything in the text field
+    _controller.clear();
+    // Call setState to update the UI
+    setState(() {});
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,6 +38,32 @@ class _catalogList extends State<catalogList> {
           }, // 페이지 연결
         ),
         actions: <Widget>[
+          Expanded(
+            child: Container(
+              height: 50,
+              child: TextField(
+                controller: _controller,
+                style: TextStyle(
+                  color: Colors.black,
+                ),
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                    borderSide: BorderSide(
+                      color: Color(0xffa6a6a6),
+                    ),
+                  ),
+                  labelText: '내용을 입력해주세요.',
+                  prefixIcon: const Icon(Icons.search),
+                  suffixIcon: IconButton(
+                    onPressed: _clearTextField,
+                    icon: Icon(Icons.clear),
+                  ),
+                ),
+              ),
+              margin: const EdgeInsets.only(right: 20, left:65, top:10, bottom:5),
+            ),
+          ),
           IconButton(
             icon: Icon(Icons.room), // 아이콘 생성
             color: Color(0xffffa511),
