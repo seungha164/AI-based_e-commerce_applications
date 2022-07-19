@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "921371854981",
+    "project_id": "baljachwi-16760",
+    "storage_bucket": "baljachwi-16760.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:921371854981:android:45cca9bd24db6d106141ec",
+        "android_client_info": {
+          "package_name": "com.kgu.baljachwi_project.baljachwi_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "921371854981-jo1cjs9p1ln8ncnined6gb7nmegbb7al.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADbyKjUCSqaXyoTPH4xRCO7c1YiJFvIDM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "921371854981-jo1cjs9p1ln8ncnined6gb7nmegbb7al.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
