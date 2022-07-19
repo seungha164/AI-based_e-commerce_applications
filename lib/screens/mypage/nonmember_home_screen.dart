@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:baljachwi_project/screens/nonmember_order_screen.dart';
+import 'package:baljachwi_project/screens/mypage/nonmember_order_screen.dart';
 
 class nonmemberHome extends StatelessWidget {
   const nonmemberHome({Key? key}) : super(key: key);
