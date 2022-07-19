@@ -9,13 +9,6 @@ class catalogList extends StatefulWidget {
 }
 
 class _catalogList extends State<catalogList> {
-  final TextEditingController _controller = TextEditingController();
-  void _clearTextField() {
-    // Clear everything in the text field
-    _controller.clear();
-    // Call setState to update the UI
-    setState(() {});
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,32 +31,6 @@ class _catalogList extends State<catalogList> {
           }, // 페이지 연결
         ),
         actions: <Widget>[
-          Expanded(
-            child: Container(
-              height: 50,
-              child: TextField(
-                controller: _controller,
-                style: TextStyle(
-                  color: Colors.black,
-                ),
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                    borderSide: BorderSide(
-                      color: Color(0xffa6a6a6),
-                    ),
-                  ),
-                  labelText: '내용을 입력해주세요.',
-                  prefixIcon: const Icon(Icons.search),
-                  suffixIcon: IconButton(
-                    onPressed: _clearTextField,
-                    icon: Icon(Icons.clear),
-                  ),
-                ),
-              ),
-              margin: const EdgeInsets.only(right: 20, left:65, top:10, bottom:5),
-            ),
-          ),
           IconButton(
             icon: Icon(Icons.room), // 아이콘 생성
             color: Color(0xffffa511),
@@ -146,7 +113,7 @@ class _catalogList extends State<catalogList> {
                           height: 130,
                           margin: const EdgeInsets.only(left: 35, right: 35),
                           alignment: Alignment.centerLeft,
-                          child: Image.asset('images/chickenBreast.jpg',
+                          child: Image.asset('assets/logo/logo.png',
                               width: 100, height: 100),
                         ),
                         Column(
@@ -155,7 +122,7 @@ class _catalogList extends State<catalogList> {
                             Container(
                               width: 400,
                               child: Text(
-                                '하림 IFF 닭가슴살(냉동), 2kg, 1개',
+                                '하림 닭가슴살 1개입',
                                 style: TextStyle(
                                     fontSize: 20, fontWeight: FontWeight.bold),
                               ),
@@ -163,51 +130,7 @@ class _catalogList extends State<catalogList> {
                             Container(
                               width: 400,
                               child: Text(
-                                '16,900원',
-                                style: TextStyle(fontSize: 16, height: 2),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                width: double.infinity,
-                alignment: Alignment.centerLeft,
-                padding: const EdgeInsets.fromLTRB(5, 12, 35, 12),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: <Widget>[
-                        Container(
-                          width: 100,
-                          height: 130,
-                          margin: const EdgeInsets.only(left: 35, right: 35),
-                          alignment: Alignment.centerLeft,
-                          child: Image.asset('images/tomato.jpg',
-                              width: 100, height: 100),
-                        ),
-                        Column(
-                          //width: 240,
-                          children: <Widget>[
-                            Container(
-                              width: 400,
-                              child: Text(
-                                '충남세도 GAP 인증 대추방울토마토, 1kg, 1박스',
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                            Container(
-                              width: 400,
-                              child: Text(
-                                '11,800원',
+                                '2,200원',
                                 style: TextStyle(fontSize: 16, height: 2),
                               ),
                             ),
