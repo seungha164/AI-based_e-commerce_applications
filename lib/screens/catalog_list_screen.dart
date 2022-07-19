@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:baljachwi_project/screens/nonmember_order_screen.dart';
 
 bool isChecked = false;
 
@@ -9,6 +10,7 @@ class catalogList extends StatefulWidget {
 }
 
 class _catalogList extends State<catalogList> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +35,7 @@ class _catalogList extends State<catalogList> {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.room), // 아이콘 생성
-            color: Color(0xffffa511),
+            color : Color(0xffffa511),
             onPressed: () {
               // 아이콘 버튼 실행
               print('Button is clicked');
@@ -41,7 +43,7 @@ class _catalogList extends State<catalogList> {
           ),
           IconButton(
             icon: Icon(Icons.shopping_cart), // 장바구니 아이콘 생성
-            color: Color(0xffffa511),
+            color : Color(0xffffa511),
             onPressed: () {
               // 아이콘 버튼 실행
               print('Shopping cart button is clicked');
@@ -69,23 +71,27 @@ class _catalogList extends State<catalogList> {
                 Container(
                   margin: const EdgeInsets.only(bottom: 0, left: 8),
                   alignment: Alignment.centerLeft,
-                  child: Row(children: [
-                    Checkbox(
+                  child: Row(
+                    children:[
+                      Checkbox(
                         value: isChecked,
-                        onChanged: (value) {
-                          setState(() {
-                            if (value != null) isChecked = value;
-                          });
-                        }),
-                    Text(
-                      '정기구매',
-                      style: TextStyle(
-                        fontSize: 15,
-                        height: 1.12,
-                        fontWeight: FontWeight.bold,
+                          onChanged: (value) {
+                            setState(() {
+                              if(value != null)
+                                isChecked = value;
+                            });
+                          }
                       ),
-                    )
-                  ]),
+                      Text(
+                        '정기구매',
+                        style: TextStyle(
+                          fontSize: 15,
+                          height: 1.12,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )
+                    ]
+                  ),
                 ),
               ],
             ),
@@ -113,28 +119,28 @@ class _catalogList extends State<catalogList> {
                           height: 130,
                           margin: const EdgeInsets.only(left: 35, right: 35),
                           alignment: Alignment.centerLeft,
-                          child: Image.asset('assets/logo/logo.png',
-                              width: 100, height: 100),
+                          child: Image.asset('assets/logo/logo.png', width:100, height:100),
                         ),
                         Column(
                           //width: 240,
-                          children: <Widget>[
-                            Container(
-                              width: 400,
-                              child: Text(
-                                '하림 닭가슴살 1개입',
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold),
+                            children: <Widget>[
+                              Container(
+                                width: 400,
+                                child: Text(
+                                  '하림 닭가슴살 1개입',
+                                  style: TextStyle(
+                                      fontSize: 20, fontWeight: FontWeight.bold),
+                                ),
                               ),
-                            ),
-                            Container(
-                              width: 400,
-                              child: Text(
-                                '2,200원',
-                                style: TextStyle(fontSize: 16, height: 2),
+                              Container(
+                                width: 400,
+                                child: Text(
+                                  '2,200원',
+                                  style: TextStyle(
+                                      fontSize: 16, height: 2),
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
                         ),
                       ],
                     ),
