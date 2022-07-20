@@ -8,6 +8,11 @@ import 'package:baljachwi_project/screens/Home/home.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
+import 'package:baljachwi_project/screens/product_details/product_details_screen.dart';
+import 'package:flutter_dropdown_alert/alert_controller.dart';
+import 'package:flutter_dropdown_alert/dropdown_alert.dart';
+import 'package:flutter_dropdown_alert/model/data_alert.dart';
+
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -23,6 +28,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       //debugShowCheckedModeBanner: false,
+
+      // 제품 상세페이지 드롭다운 메뉴를 위한 builer *지우지 마시오*
+      builder: (context, child) => Stack(
+        children: [
+          child!,
+          DropdownAlert()
+        ],
+      ),
+      //
+
       home: catalogList(),
     );
   }
