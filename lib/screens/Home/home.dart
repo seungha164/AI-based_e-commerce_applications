@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:dropdown_button2/custom_dropdown_button2.dart';
+import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 final List<String> items = [
-  'Item1',
-  'Item2',
-  'Item3',
-  'Item4',
-  'Item5',
-  'Item6',
-  'Item7',
-  'Item8',
+  '~10,000',
+  '~30,000',
+  '~50,000',
+  '~100,000',
+  '무제한',
 ];
 String? selectedValue;
 class Home extends StatefulWidget {
@@ -72,23 +70,24 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
               controller: _tabController,
               children: [
                 Container(
-                  child: Center(
+                  child: const Center(
                     child: Text('자취 추천'),
                   ),
                 ),
                 Container(
-                  child: Center(
+                  child: const Center(
                     child: Text('쇼핑'),
                   ),
                 ),
                 Container(
-                  child: Center(
+                  child: const Center(
                     child: Text('MATE'),
                   ),
                 ),
                 SingleChildScrollView(
+                  padding: const EdgeInsets.all(15),
                   child: Container(
-                      padding: const EdgeInsets.all(20),
+                      padding: const EdgeInsets.fromLTRB(0,20, 0,0),
                       child: Column(
                           children: [
                             Container(
@@ -96,14 +95,26 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const Text('실시간 인기 레시피',style: TextStyle(fontWeight: FontWeight.bold),),
+                                  Text('실시간 인기 레시피',style: TextStyle(fontWeight: FontWeight.bold),),
                                   Divider(thickness: 0.5,color: Colors.white),
-
+                                  Container(
+                                      height: 150,
+                                      child:
+                                      new Swiper(
+                                          itemBuilder: (BuildContext context,int idx){
+                                            return new Container(
+                                              color: Colors.grey[300],);
+                                          },
+                                          itemCount: 5,
+                                          pagination: new SwiperPagination(),
+                                          control: new SwiperControl()
+                                      )
+                                  )
                                 ],
                               ),
                             ),
                             Container(
-                              margin: EdgeInsets.fromLTRB(0,0, 0, 100),
+                              margin: EdgeInsets.fromLTRB(0,30, 0, 100),
                               child: Column(
                                 children: [
                                   Container(
