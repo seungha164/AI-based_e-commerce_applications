@@ -68,6 +68,7 @@ flutter:
     - assets/
     - assets/logo/
     - assets/logo/logo.png
+    - assets/images/
     - assets/images/scrollTest.png
     - assets/images/underbarTest.png
 

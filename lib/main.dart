@@ -1,6 +1,7 @@
 import 'package:baljachwi_project/screens/catalog_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:baljachwi_project/screens/Home/home.dart';
 // firebase core 플러그인 및 생성한 구서파일 가져오기
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       //debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: catalogList(),
     );
   }
 }

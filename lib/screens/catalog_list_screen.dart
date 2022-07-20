@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 bool isChecked = false;
 
@@ -16,6 +17,17 @@ class _catalogList extends State<catalogList> {
     // Call setState to update the UI
     setState(() {});
   }
+
+  void readdata(String code){ //// 여기 해야됨!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    final usercol=FirebaseFirestore.instance.collection("users").doc("$code");
+    usercol.get().then((value) => {
+      print(value.data())
+    });
+  }
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +73,7 @@ class _catalogList extends State<catalogList> {
                   ),
                 ),
               ),
-              margin: const EdgeInsets.only(right: 20, left:65, top:10, bottom:5),
+              padding: const EdgeInsets.only(right: 5, left:53, top:10, bottom:7),
             ),
           ),
           IconButton(
@@ -88,19 +100,16 @@ class _catalogList extends State<catalogList> {
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
           Container(
-            height: 2,
             color: Colors.white,
-          ),
-          Container(
-            color: Colors.white,
-            height: 47,
-            padding: const EdgeInsets.all(5.0),
+            height: 37,
+            padding: const EdgeInsets.all(2.0),
             margin: const EdgeInsets.all(4.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Container(
-                  margin: const EdgeInsets.only(bottom: 0, left: 8),
+                  height: 14,
+                  margin: const EdgeInsets.only(left: 3, top:3.5),
                   alignment: Alignment.centerLeft,
                   child: Row(children: [
                     Checkbox(
@@ -113,8 +122,8 @@ class _catalogList extends State<catalogList> {
                     Text(
                       '정기구매',
                       style: TextStyle(
-                        fontSize: 15,
-                        height: 1.12,
+                        fontSize: 14,
+                        height: 0.95,
                         fontWeight: FontWeight.bold,
                       ),
                     )
@@ -124,7 +133,7 @@ class _catalogList extends State<catalogList> {
             ),
           ),
           Container(
-            height: 2,
+            height: 1.5,
             color: Color(0xffb4b7bb),
           ),
           Column(
@@ -138,33 +147,31 @@ class _catalogList extends State<catalogList> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                    Wrap(
                       children: <Widget>[
                         Container(
                           width: 100,
-                          height: 130,
-                          margin: const EdgeInsets.only(left: 35, right: 35),
+                          height: 110,
+                          margin: const EdgeInsets.only(left: 20, right: 20),
                           alignment: Alignment.centerLeft,
-                          child: Image.asset('images/chickenBreast.jpg',
+                          child: Image.asset('assets/images/chickenBreast.jpg',
                               width: 100, height: 100),
                         ),
                         Column(
-                          //width: 240,
                           children: <Widget>[
                             Container(
-                              width: 400,
+                              width: 202 * (MediaQuery.of(context).size.width/360),
                               child: Text(
                                 '하림 IFF 닭가슴살(냉동), 2kg, 1개',
                                 style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold),
+                                    fontSize: 15, fontWeight: FontWeight.bold),
                               ),
                             ),
                             Container(
-                              width: 400,
+                              width: 202 * (MediaQuery.of(context).size.width/360),
                               child: Text(
                                 '16,900원',
-                                style: TextStyle(fontSize: 16, height: 2),
+                                style: TextStyle(fontSize: 13, height: 1.5),
                               ),
                             ),
                           ],
@@ -182,33 +189,35 @@ class _catalogList extends State<catalogList> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                    Wrap(
+                      //mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
                         Container(
                           width: 100,
-                          height: 130,
-                          margin: const EdgeInsets.only(left: 35, right: 35),
+                          height: 110,
+                          margin: const EdgeInsets.only(left: 20, right: 20),
                           alignment: Alignment.centerLeft,
-                          child: Image.asset('images/tomato.jpg',
+                          child: Image.asset('assets/images/tomato.jpg',
                               width: 100, height: 100),
                         ),
                         Column(
                           //width: 240,
                           children: <Widget>[
                             Container(
-                              width: 400,
+                              width: 202 * (MediaQuery.of(context).size.width/360),
+                              //margin: const EdgeInsets.only(left: 20, right: 20),
                               child: Text(
                                 '충남세도 GAP 인증 대추방울토마토, 1kg, 1박스',
                                 style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold),
+                                    fontSize: 15, fontWeight: FontWeight.bold),
                               ),
                             ),
                             Container(
-                              width: 400,
+                              width: 202 * (MediaQuery.of(context).size.width/360),
                               child: Text(
                                 '11,800원',
-                                style: TextStyle(fontSize: 16, height: 2),
+                                style: TextStyle(fontSize: 13, height: 1.5),
+                                textAlign: TextAlign.left,
                               ),
                             ),
                           ],
