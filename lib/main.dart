@@ -14,6 +14,9 @@ import 'package:flutter_dropdown_alert/alert_controller.dart';
 import 'package:flutter_dropdown_alert/dropdown_alert.dart';
 import 'package:flutter_dropdown_alert/model/data_alert.dart';
 
+// Navbar랑 Footbar 테스트 스크린 적용하기
+import 'package:baljachwi_project/screens/bar_test_screen.dart';
+
 void main() async{
   /*
   WidgetsFlutterBinding.ensureInitialized();
@@ -40,7 +43,7 @@ class MyApp extends StatelessWidget {
       ),
       //
 
-      home: catalogList(),
+      home: barTestScreen(),
     );
   }
 }
